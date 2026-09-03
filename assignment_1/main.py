@@ -8,8 +8,11 @@ def main():
         print()
         choice = select_menu_option()
         if choice == 1:
-            db.delete_first_entry()
-            print("First entry deleted.")
+            success = db.delete_first_entry()
+            if success:
+                print("First entry deleted.")
+            else:
+                print("Failed to delete first entry.")
         elif choice == 2:
             total = db.sum_column("id")
             print(f"Sum of column 'id': {total}")

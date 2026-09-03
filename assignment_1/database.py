@@ -23,6 +23,8 @@ class Database:
     def delete_first_entry(self):
         if self.__entries:
             del self.__entries[0]
+            return True
+        return False
 
     # 6.2
     def sum_column(self, column_name):
