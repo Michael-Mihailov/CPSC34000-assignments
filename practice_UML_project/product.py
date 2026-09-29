@@ -21,9 +21,11 @@ class Product:
         return self.__price
 
     def get_data(self):
-        return ("%-6d %-25s %10.2f" % self.get_prod_num(), self.get_prod_name(), self.get_price())
+        return self.get_stock_value() + (" %10.2f" % self.get_price())
+        # return ("%-6d %-25s %10.2f" % self.get_prod_num(), self.get_prod_name(), self.get_price())
     def get_stock_value(self):
-        ...
+        return ("%-6d %-25s" % self.get_prod_num(), self.get_prod_name())
+
 
 class ProductionQuantity(Product):
     def __init__(self, prod_num:int, prod_name:str, price:float, quantity:int):
@@ -37,9 +39,7 @@ class ProductionQuantity(Product):
         return self.__quantity
 
     def display_data(self):
-        ...
-    def get_stock_value(self):
-        ...
+        return ("Product by Quantity: " + self.get_data() + (" %8d" % self.get_quantity()))
 
 
 class ProductPounds(Product):
@@ -54,6 +54,4 @@ class ProductPounds(Product):
         return self.__pounds
 
     def display_data(self):
-        ...
-    def get_stock_value(self):
-        ...
+        return ("Product by Pounds: " + self.get_data() + (" %10.2f" % self.get_pounds()))
