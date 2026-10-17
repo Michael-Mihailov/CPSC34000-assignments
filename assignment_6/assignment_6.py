@@ -64,7 +64,7 @@ def main():
     ev_data_filename = "Electric_Vehicle_Population_Data(2).txt"
 
     # Test Crime Data File
-    crime_data = read_file(crime_data_filename, 50000)
+    crime_data = read_file(crime_data_filename, 10000)
     print(f"Using the first {len(crime_data)} lines from the {crime_data_filename} file")
     sorted_crime_data_bubble, bubble_time = time_sorting_algorithm(bubble_sort, crime_data.copy())
     print(f"Bubble Sort Time for Crime Data: {bubble_time:.6f} seconds")
@@ -79,7 +79,7 @@ def main():
 
 
     # Test EV Data File
-    ev_data = read_file(ev_data_filename, 50000)
+    ev_data = read_file(ev_data_filename, 10000)
     print(f"Using the first {len(ev_data)} lines from the {ev_data_filename} file")
     sorted_ev_data_bubble, bubble_time = time_sorting_algorithm(bubble_sort, ev_data.copy())
     print(f"Bubble Sort Time for EV Data: {bubble_time:.6f} seconds")
@@ -91,6 +91,7 @@ def main():
 
     print()
     print("END OF PROGRAM")
+
 
 
 if __name__ == "__main__":
